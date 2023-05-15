@@ -1,0 +1,19 @@
+#Specifies the version of docker compose file format to use
+version: '3'
+
+# Start of definition of service
+services:
+
+  # The name of the service, chosen based on functionality of the Node.js app
+  webcalculator:
+
+    # The build context, which in this case, as a simple example uses the current directory 
+    build:
+      context: .
+
+      # Specifies the name of the dockerfile to use for building the image
+      dockerfile: Dockerfile
+
+    # Mapping the ports of the container and host computer 
+    ports:
+      - "3040:3040"
